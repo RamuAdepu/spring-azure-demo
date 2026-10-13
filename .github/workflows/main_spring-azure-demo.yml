@@ -42,12 +42,3 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: java-app
-      
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'spring-azure-demo'
-          slot-name: 'Production'
-          package: '*.jar'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_86F2C91348F7458392F48049ABBE31EE }}
